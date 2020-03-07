@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-
+import {MatDialogModule} from "@angular/material";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +26,8 @@ import { MatToolbarModule,
   MatOptionModule
 } from '@angular/material';
 import { from } from 'rxjs';
+import { InicioComponent } from './inicio/inicio.component';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { from } from 'rxjs';
     AppComponent,
     LoginComponent,
     MainNavComponent,
-    MainNavComponent
+    MainNavComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { from } from 'rxjs';
     MatCheckboxModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatDialogModule,
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
@@ -57,6 +61,7 @@ import { from } from 'rxjs';
     MatSelectModule,
     MatOptionModule
   ],
+  entryComponents: [LoginComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
