@@ -4,11 +4,11 @@
     max-width: 500px;
     width: 100%;
   }
-  
+
   .example-full-width {
     width: 100%;
   }
-  
+
   td {
     padding-right: 7px;
   }
@@ -32,30 +32,18 @@
       <input matInput>
     </mat-form-field></td>
   </tr></table>
-  <p>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td></td>
     <mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
       <input matInput required>
     </mat-form-field>
-  </p>
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td> <mat-form-field>
+    <td><mat-form-field>
       <mat-label>Enter your password</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
-    </mat-form-field></td>
-    <td><mat-form-field>
-      <mat-label>Grade</mat-label>
-      <select matNativeControl required>
-        <option value="4°">None</option>
-        <option value="1°">1°</option>
-        <option value="2°">2°</option>
-        <option value="3°">3°</option>
-        <option value="4°">4°</option>
-        <option value="5°">5°</option>
-      </select>
     </mat-form-field></td>
   </tr></table>
   <button type="submit" mat-flat-button color="primary">Register</button>

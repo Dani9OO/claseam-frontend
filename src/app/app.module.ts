@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-import {MatDialogModule} from "@angular/material";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
-import { MainNavComponent } from './main-nav/main-nav.component';
-import { MatCheckboxModule } from '@angular/material/checkbox'; 
-import { MatToolbarModule,
+import { InicioComponent } from './inicio/inicio.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {
+  MatDialogModule,
+  MatToolbarModule,
   MatMenuModule,
   MatIconModule,
   MatButtonModule,
@@ -25,8 +26,6 @@ import { MatToolbarModule,
   MatListModule,
   MatOptionModule
 } from '@angular/material';
-import { from } from 'rxjs';
-import { InicioComponent } from './inicio/inicio.component';
 
 
 
@@ -34,9 +33,8 @@ import { InicioComponent } from './inicio/inicio.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    MainNavComponent,
-    MainNavComponent,
-    InicioComponent,
+    MenuComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

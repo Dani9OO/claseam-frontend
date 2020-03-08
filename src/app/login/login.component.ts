@@ -13,6 +13,7 @@ export interface DialogData {
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
+  hide = true;
 
   constructor(
     public dialogRef: MatDialogRef<LoginComponent>,
@@ -21,6 +22,4 @@ export class LoginComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-  
-
 }
