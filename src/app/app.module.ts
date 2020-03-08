@@ -5,9 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-import { LoginComponent } from './login/login.component';
-import { InicioComponent } from './inicio/inicio.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {
   MatDialogModule,
@@ -26,15 +23,22 @@ import {
   MatListModule,
   MatOptionModule
 } from '@angular/material';
+import { InicioComponent } from './inicio/inicio.component';
+import { MenuComponent } from './menu/menu.component';
+import { RegistroComponent } from './registro/registro.component';
+import { BienvenidoComponent } from './bienvenido/bienvenido.component';
+import { IniciarsesionComponent } from './iniciarsesion/iniciarsesion.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    InicioComponent,
     MenuComponent,
-    InicioComponent
+    RegistroComponent,
+    BienvenidoComponent,
+    IniciarsesionComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,7 @@ import {
     MatSelectModule,
     MatOptionModule
   ],
-  entryComponents: [LoginComponent],
+  entryComponents: [IniciarsesionComponent, RegistroComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

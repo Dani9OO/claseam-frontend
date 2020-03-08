@@ -1,0 +1,38 @@
+<form class="example-form">
+  <h3>Form Register</h3>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Fisrt Name</mat-label>
+          <input matInput required>
+        </mat-form-field>
+      </mat-form-field>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput required>
+  </mat-form-field>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <button type="submit" mat-flat-button color="primary">Register</button>
+</form>
