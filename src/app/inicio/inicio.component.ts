@@ -26,7 +26,7 @@ export class InicioComponent {
 
   openIniciarSesion(): void {
     this.dialogRef = this.dialog.open(IniciarsesionComponent, {
-      width: '450px'
+      width: '265px'
     });
     this.dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

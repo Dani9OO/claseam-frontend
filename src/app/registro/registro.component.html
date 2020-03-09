@@ -1,30 +1,32 @@
-<form class="example-form">
-  <h3>Form Register</h3>
+<form class="example-form" method="POST">
+  <h3>Formulario de Registro</h3>
   <table class="example-full-width" cellspacing="0">
     <tr>
-      <mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Fisrt Name</mat-label>
-          <input matInput required>
-        </mat-form-field>
-      </mat-form-field>
       <td>
         <mat-form-field class="example-full-width">
-          <mat-label>Last Name</mat-label>
+          <mat-label>Nombre(s)</mat-label>
+          <input matInput required>
+        </mat-form-field>
+    </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Apellido(s)</mat-label>
           <input matInput>
         </mat-form-field>
       </td>
     </tr>
-  </table>
-  <mat-form-field class="example-full-width">
-    <mat-label>Email</mat-label>
-    <input matInput required>
-  </mat-form-field>
-  <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
+        <mat-icon>email</mat-icon>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput required>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-icon>lock</mat-icon>
         <mat-form-field>
-          <mat-label>Enter your password</mat-label>
+          <mat-label>Contraseña</mat-label>
           <input matInput [type]="hide ? 'password' : 'text'">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide">

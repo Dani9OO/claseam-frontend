@@ -28,6 +28,9 @@ import { MenuComponent } from './menu/menu.component';
 import { RegistroComponent } from './registro/registro.component';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
 import { IniciarsesionComponent } from './iniciarsesion/iniciarsesion.component';
+import { GrupoComponent } from './grupo/grupo.component';
+import { HorarioComponent } from './horario/horario.component';
+import { ActividadComponent } from './actividad/actividad.component';
 
 
 
@@ -39,6 +42,9 @@ import { IniciarsesionComponent } from './iniciarsesion/iniciarsesion.component'
     RegistroComponent,
     BienvenidoComponent,
     IniciarsesionComponent,
+    GrupoComponent,
+    HorarioComponent,
+    ActividadComponent,
   ],
   imports: [
     BrowserModule,

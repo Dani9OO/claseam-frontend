@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<mat-card>
+    <form class="example-form" method="POST">
+        <h3>*Nueva Actividad</h3>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Nombre de Actividad</mat-label>
+                <input matInput required>
+              </mat-form-field>
+          </td>
+          </tr>
+          <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Descripción</mat-label>
+                    <textarea matInput placeholder=""></textarea>
+                  </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Subject</mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <button type="submit" mat-flat-button color="primary">Crear Actividad</button>
+      </form>
+</mat-card>

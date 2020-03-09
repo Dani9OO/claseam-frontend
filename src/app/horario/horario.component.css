@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  .mat-card{
+    width: 450px;
+    left: 450px;
+    margin-top: 70px;
+  }  
+td{
+  align-items: center;
+  width: 250px;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+.mat-checkbox{
+  text-align: center;
+  align-items: center;
+}
