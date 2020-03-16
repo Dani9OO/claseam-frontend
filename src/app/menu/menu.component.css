@@ -18,8 +18,8 @@
   
   .navbar {
     position: fixed;
-    background:#1d1d1d;
-    /*background: linear-gradient(90deg, rgba(0,121,145,1) 35%, rgba(120,255,214,1) 100%); */
+    background: rgb(0,121,145);
+    background: linear-gradient(90deg, rgba(0,121,145,1) 0%, rgba(120,255,214,1) 100%); 
     transition: width 600ms ease;
   }
 

@@ -20,3 +20,6 @@
   .mat-checkbox{
     align-items: center;
   }
+  button{
+    width: 100%;
+  }

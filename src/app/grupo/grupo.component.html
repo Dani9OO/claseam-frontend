@@ -15,16 +15,12 @@
   <tr>
       <td>
         <mat-form-field class="example-full-width">
-          <mat-label>Subject</mat-label>
+          <mat-label>Materia</mat-label>
           <input matInput>
         </mat-form-field>
       </td>
       <td>
-        <mat-form-field class="example-full-width">
-          <mat-label>Company</mat-label>
-          <input matInput>
-        </mat-form-field>
-    
+        <button mat-flat-button color="primary" (click)="openHorario()">Horario</button>
       </td>
     </tr></table>
     <table class="example-full-width" cellspacing="0"><tr>
@@ -37,6 +33,7 @@
         <input matInput placeholder="Ex. California">
       </mat-form-field></td>
     </tr></table>
+    <button mat-flat-button color="primary">Crear Grupo</button>
   </form>
 </mat-card>
   
