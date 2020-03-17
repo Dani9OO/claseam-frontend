@@ -1,21 +1,21 @@
 <nav class="navbar">
     <ul class="navbar-nav">
       <li class="logo">
-        <a [routerLink]="['/bienvenido']" class="nav-link">
+        <a [routerLink]="['/']" class="nav-link">
           <h2 class="link-text logo-text"></h2>
           <mat-icon>home</mat-icon>
         </a>
       </li>
 
       <li class="nav-item">
-        <a [routerLink]="['/actividad']" class="nav-link">
+        <a class="nav-link" (click)="openActividad()">
           <mat-icon>note_add</mat-icon>
           <h2 class="link-text">Actividad</h2>
         </a>
       </li>
 
       <li class="nav-item">
-        <a [routerLink]="['/grupo']" class="nav-link">
+        <a class="nav-link"  (click)="openGrupo()">
           <mat-icon>group</mat-icon>
           <h2 class="link-text">Grupo</h2>
         </a>

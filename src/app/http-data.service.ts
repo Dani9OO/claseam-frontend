@@ -13,8 +13,22 @@ export class HttpDataService {
   constructor(
     private http: HttpClient
   ) { }
-
   registrarAlumno(alumno: object) {
-    return this.http.post('http://localhost:3000/api/user/create', alumno);
+    return this.http.post('${environment.api}/user/create', alumno);
   }
+  actualizarAlumno(alumno: object) {
+    return this.http.post('${environment.api}/user/update', alumno);
+  }
+  recuperarAlumno(alumno: object) {
+    return this.http.get('${environment.api}/user/retrieve', alumno);
+  }
+  eliminarAlumno(alumno: object) {
+    return this.http.delete('${environment.api}/user/delete', alumno);
+  }
+
+
+
 }
+
+
+

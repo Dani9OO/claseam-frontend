@@ -1,11 +1,11 @@
-<form class="example-form">
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td>
             <mat-icon>account_box</mat-icon>
           <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-            <input matInput required>
+            <input matInput required formControlName="username">
           </mat-form-field>
         </td>
       </tr>
@@ -14,7 +14,7 @@
             <mat-icon>lock</mat-icon>
           <mat-form-field>
             <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -25,4 +25,4 @@
     </table>
     <button type="submit" mat-flat-button color="primary">Iniciar Sesión</button>
   </form>
-  
+
