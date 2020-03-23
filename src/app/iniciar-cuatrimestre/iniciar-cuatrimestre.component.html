@@ -1,0 +1,12 @@
+<h3 style="text-align: center;">Iniciar Cuatrimestre</h3>
+<form>
+<mat-icon>date_range</mat-icon>
+<mat-form-field>
+    <mat-label>Ciclo Escolar</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let periodos of periodo" [value]="periodos.value">
+        {{periodos.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

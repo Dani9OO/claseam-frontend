@@ -42,6 +42,16 @@ export class GrupoComponent implements OnInit {
     });
   }
 
+  openMateria(): void {
+    this.dialogRef = this.dialog.open(MateriaComponent, {
+      width: '450px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }

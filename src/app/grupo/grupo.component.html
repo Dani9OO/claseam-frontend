@@ -17,19 +17,21 @@
       </tr>
       <tr>
         <td>
-          <mat-form-field class="example-full-width">
-            <select matNativeControl *ngFor="let materia of materias.result">
-              <option value="{{materia._id}}">{{materia.name}}</option>
-              </select>
+          <mat-form-field style="width: 100%;">
+            <mat-select>
+              <mat-option *ngFor="let materia of materias" [value]="materia._id">
+                {{materia.name}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </td>
         <td>
-          <button mat-flat-button color="primary" (click)="openMateria()">Añadir Materia</button>
+          <button mat-flat-button color="primary" (click)="openHorario()">Horario</button>
         </td>
       </tr>
       <tr>
         <td>
-          <button mat-flat-button color="primary" (click)="openHorario()">Horario</button>
+          <button mat-flat-button color="primary" (click)="openMateria()">Añadir Materia</button>
         </td>
         <td>
           <li *ngIf="horario">

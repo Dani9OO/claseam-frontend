@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { HorarioComponent } from '../horario/horario.component';
 import { GrupoComponent } from '../grupo/grupo.component';
 import { ActividadComponent } from '../actividad/actividad.component';
+import { IniciarCuatrimestreComponent } from '../iniciar-cuatrimestre/iniciar-cuatrimestre.component';
+
 
 @Component({
   selector: 'app-menu',
@@ -37,5 +39,14 @@ export class MenuComponent {
     });
   }
 
+  openCuatri(): void {
+    this.dialogRef = this.dialog.open(IniciarCuatrimestreComponent, {
+      width: '500px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado');
+      console.log(result);
+    });
+  }
 
 }

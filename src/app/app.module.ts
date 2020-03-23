@@ -38,6 +38,7 @@ import { environment } from '../environments/environment';
 
 import { PushNotificationService} from './_services/push-notification.service';
 import { HttpClientModule } from '@angular/common/http';
+import { IniciarCuatrimestreComponent } from './iniciar-cuatrimestre/iniciar-cuatrimestre.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     HorarioComponent,
     ActividadComponent,
     MateriaComponent,
+    IniciarCuatrimestreComponent,
   ],
   imports: [
     HttpClientModule,
@@ -79,7 +81,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatOptionModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent, MateriaComponent, ActividadComponent, HorarioComponent],
+  entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent,
+     IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent],
   providers: [PushNotificationService],
   bootstrap: [AppComponent]
 })
