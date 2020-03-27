@@ -1,0 +1,25 @@
+<h3 style="text-align: center;">Avisos</h3>
+<form>
+<table class="example-full-width">
+    <tr>
+        <td>
+    <mat-icon>email</mat-icon>
+    <mat-form-field class="example-full-width">
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput placeholder=""></textarea>
+    </mat-form-field>
+    </td>
+</tr>
+<tr>
+    <td>
+        <mat-icon>group</mat-icon>
+        <mat-form-field style="width: 100%;">
+          <mat-label>Grupos Destino</mat-label>
+          <mat-select [formControl]="toppings" multiple>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+</td>
+</tr>
+</table>
+</form>

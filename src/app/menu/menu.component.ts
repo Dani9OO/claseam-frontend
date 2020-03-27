@@ -4,6 +4,7 @@ import { HorarioComponent } from '../horario/horario.component';
 import { GrupoComponent } from '../grupo/grupo.component';
 import { ActividadComponent } from '../actividad/actividad.component';
 import { IniciarCuatrimestreComponent } from '../iniciar-cuatrimestre/iniciar-cuatrimestre.component';
+import { AvisosComponent } from '../avisos/avisos.component';
 
 
 @Component({
@@ -39,9 +40,19 @@ export class MenuComponent {
     });
   }
 
+  openAvisos(): void {
+    this.dialogRef = this.dialog.open(AvisosComponent, {
+      width: '350px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado');
+      console.log(result);
+    });
+  }
+
   openCuatri(): void {
     this.dialogRef = this.dialog.open(IniciarCuatrimestreComponent, {
-      width: '500px'
+      width: '425px'
     });
     this.dialogRef.afterClosed().subscribe(result => {
       console.log('Cerrado');

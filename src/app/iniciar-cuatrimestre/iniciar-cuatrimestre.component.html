@@ -1,6 +1,9 @@
 <h3 style="text-align: center;">Iniciar Cuatrimestre</h3>
 <form>
-<mat-icon>date_range</mat-icon>
+  <table>
+  <tr>
+    <td>
+      <mat-icon>date_range</mat-icon>
 <mat-form-field>
     <mat-label>Ciclo Escolar</mat-label>
     <mat-select>
@@ -9,4 +12,31 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+</td>
+<td>
+  <mat-icon>group</mat-icon>
+  <mat-form-field style="width: 100%;">
+    <mat-label>Grupos a impartir</mat-label>
+    <mat-select [formControl]="toppings" multiple>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</td>
+</tr>
+<tr>
+<td>
+  <mat-form-field style="width: 100%;">
+    <mat-select>
+      <mat-option *ngFor="let materia of materias" [value]="materia._id">
+        {{materia.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</td>
+<td>
+  <button mat-flat-button color="primary" (click)="openMateria()">Añadir Materia</button>
+</td>
+</tr>
+</table>
+  <button mat-flat-button color="primary">Comenzar</button>
 </form>

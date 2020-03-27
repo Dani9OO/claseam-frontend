@@ -8,9 +8,12 @@
       <mat-label>Descripción</mat-label>
       <textarea matInput placeholder=""></textarea>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <mat-label>Materia</mat-label>
-    <input matInput required>
+  <mat-form-field style="width: 100%;">
+    <mat-select>
+      <mat-option *ngFor="let materia of materias" [value]="materia._id">
+        {{materia.name}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 <button type="submit" mat-flat-button color="primary">Crear Actividad</button>
 </form>

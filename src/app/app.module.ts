@@ -39,6 +39,9 @@ import { environment } from '../environments/environment';
 import { PushNotificationService} from './_services/push-notification.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IniciarCuatrimestreComponent } from './iniciar-cuatrimestre/iniciar-cuatrimestre.component';
+import { MenuAlumnosComponent } from './menu-alumnos/menu-alumnos.component';
+import { SubirActividadComponent } from './subir-actividad/subir-actividad.component';
+import { AvisosComponent } from './avisos/avisos.component';
 
 
 @NgModule({
@@ -54,6 +57,9 @@ import { IniciarCuatrimestreComponent } from './iniciar-cuatrimestre/iniciar-cua
     ActividadComponent,
     MateriaComponent,
     IniciarCuatrimestreComponent,
+    MenuAlumnosComponent,
+    SubirActividadComponent,
+    AvisosComponent,
   ],
   imports: [
     HttpClientModule,
@@ -82,7 +88,8 @@ import { IniciarCuatrimestreComponent } from './iniciar-cuatrimestre/iniciar-cua
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent,
-     IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent],
+     IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent
+    ,SubirActividadComponent, AvisosComponent],
   providers: [PushNotificationService],
   bootstrap: [AppComponent]
 })
