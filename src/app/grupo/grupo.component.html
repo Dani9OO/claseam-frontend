@@ -9,27 +9,33 @@
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Calendario</mat-label>
-            <input matInput>
+          <mat-form-field style="width: 100%;">
+            <mat-label>Ciclo Escolar</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let periodos of periodo" [value]="periodos.value">
+                {{periodos.viewValue}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </td>
       </tr>
       <tr>
         <td>
-          <mat-form-field class="example-full-width">
-            <select matNativeControl *ngFor="let materia of materias.result">
-              <option value="{{materia._id}}">{{materia.name}}</option>
-              </select>
+          <mat-form-field style="width: 100%;">
+            <mat-select>
+              <mat-option *ngFor="let materia of materias" [value]="materia._id">
+                {{materia.name}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </td>
-        <td>
-          <button mat-flat-button color="primary" (click)="openMateria()">Añadir Materia</button>
-        </td>
-      </tr>
-      <tr>
         <td>
           <button mat-flat-button color="primary" (click)="openHorario()">Horario</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button mat-flat-button color="primary" (click)="openMateria()">Añadir Materia</button>
         </td>
         <td>
           <li *ngIf="horario">

@@ -8,6 +8,12 @@ export interface DialogData {
   hola: string;
 }
 
+
+interface Periodo {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-grupo',
   templateUrl: './grupo.component.html',
@@ -23,6 +29,14 @@ export class GrupoComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: DialogData
     ) { }
 
+
+  periodo: Periodo[] = [
+    {value: '0', viewValue: 'Enero-Abril'},
+    {value: '1', viewValue: 'Mayo-Agosto'},
+    {value: '2', viewValue: 'Septiembre-Diciembre'}
+  ];
+
+
   Lunes: number;
   Martes: number;
   Miercoles: number;
@@ -34,6 +48,16 @@ export class GrupoComponent implements OnInit {
 
   openHorario(): void {
     this.dialogRef = this.dialog.open(HorarioComponent, {
+      width: '450px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
+  }
+
+  openMateria(): void {
+    this.dialogRef = this.dialog.open(MateriaComponent, {
       width: '450px'
     });
     this.dialogRef.afterClosed().subscribe(result => {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 import { RegistroComponent } from '../registro/registro.component';
 import { IniciarsesionComponent } from '../iniciarsesion/iniciarsesion.component';
 

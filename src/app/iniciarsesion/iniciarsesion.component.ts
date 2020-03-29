@@ -33,7 +33,7 @@ export class IniciarsesionComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
+/*
   //falta llamar al servicio....al servicio configurar los parametros
   onSubmit(userData) {
     console.warn('usuario a verificar', userData);
@@ -43,6 +43,6 @@ export class IniciarsesionComponent {
     });
     this.checkoutForm.reset();
   }
-
+*/
 
 }

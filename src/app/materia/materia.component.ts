@@ -17,5 +17,6 @@ export class MateriaComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  checked = false;
 
 }

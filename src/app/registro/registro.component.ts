@@ -1,12 +1,9 @@
 import { Component, Inject } from '@angular/core';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 import {FormBuilder} from '@angular/forms';
 import { UserService } from '../_services/user.service';
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -20,8 +17,6 @@ export class RegistroComponent {
   registroForm;
 
   constructor(
-    public dialogRef: MatDialogRef<RegistroComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private formBuilder: FormBuilder,
     private servicio: UserService
     ) {
@@ -32,10 +27,6 @@ export class RegistroComponent {
         password: ''
       });
     }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
 
   onSubmit(registerData) {
     console.warn('datos de registro', registerData);

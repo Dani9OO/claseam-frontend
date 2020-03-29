@@ -38,7 +38,11 @@ import { environment } from '../environments/environment';
 
 import { PushNotificationService} from './_services/push-notification.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { IniciarCuatrimestreComponent } from './iniciar-cuatrimestre/iniciar-cuatrimestre.component';
+import { MenuAlumnosComponent } from './menu-alumnos/menu-alumnos.component';
+import { SubirActividadComponent } from './subir-actividad/subir-actividad.component';
+import { AvisosComponent } from './avisos/avisos.component';
+import { IngresarGrupoComponent } from './ingresar-grupo/ingresar-grupo.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,11 @@ import { HttpClientModule } from '@angular/common/http';
     HorarioComponent,
     ActividadComponent,
     MateriaComponent,
+    IniciarCuatrimestreComponent,
+    MenuAlumnosComponent,
+    SubirActividadComponent,
+    AvisosComponent,
+    IngresarGrupoComponent,
   ],
   imports: [
     HttpClientModule,
@@ -79,7 +88,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatOptionModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent, MateriaComponent, ActividadComponent, HorarioComponent],
+  entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent,
+     IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent
+    ,SubirActividadComponent, IngresarGrupoComponent, AvisosComponent],
   providers: [PushNotificationService],
   bootstrap: [AppComponent]
 })

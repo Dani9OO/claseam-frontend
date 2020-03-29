@@ -1,5 +1,7 @@
+
 <form [formGroup]="registroForm" (ngSubmit)="onSubmit(registroForm.value)">
   <h3>Formulario de Registro</h3>
+  <div mat-dialog-content>
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
@@ -36,5 +38,4 @@
       </td>
     </tr>
   </table>
-  <button type="submit" mat-flat-button color="primary">Register</button>
-</form>
+</div>
