@@ -27,6 +27,7 @@
 <td>
   <mat-form-field style="width: 100%;">
     <mat-select>
+      <mat-label>Selecciona la materia</mat-label>
       <mat-option *ngFor="let materia of materias" [value]="materia._id">
         {{materia.name}}
       </mat-option>

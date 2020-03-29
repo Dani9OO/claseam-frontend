@@ -1,0 +1,18 @@
+<h2 style="text-align: center;">Asignar Actividad</h2>
+<form>
+<mat-form-field style="width: 100%;">
+    <mat-label>Selecciona el grupo</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let grupos of grupo | async" [value]="grupos">
+                {{grupos.Group}}
+              </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field style="width: 100%">
+    <mat-label>Selecciona la actividad</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let actividad of actividades" [value]="actividad">{{actividad.Title}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<button type="submit" mat-flat-button color="primary">Asignar Actividad</button>
+</form>

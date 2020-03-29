@@ -9,24 +9,24 @@ import { UserService } from '../_services/user.service';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent {
+export class RegistroComponent {  
 
   usuario: object;
 
   hide = true;
-  registroForm;
+    registroForm;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private servicio: UserService
-    ) {
-      this.registroForm = this.formBuilder.group({
-        forename: '',
-        surname: '',
-        email: '',
-        password: ''
-      });
-    }
+    constructor(
+      private formBuilder: FormBuilder,
+      private servicio: UserService
+      ) {
+        this.registroForm = this.formBuilder.group({
+          forename: '',
+          surname: '',
+          email: '',
+          password: ''
+        });
+      }
 
   onSubmit(registerData) {
     console.warn('datos de registro', registerData);

@@ -1,19 +1,30 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="crearActividad" (ngSubmit)="onSubmit(crearActividad.value)">
   <h3>Nueva Actividad</h3>
     <mat-form-field class="example-full-width">
       <mat-label>Nombre de Actividad</mat-label>
-      <input matInput required>
+      <input matInput required formControlName="Title">
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Descripción</mat-label>
-      <textarea matInput placeholder=""></textarea>
+      <textarea matInput placeholder="" formControlName="Details"></textarea>
   </mat-form-field>
   <mat-form-field style="width: 100%;">
+    <mat-label>Selecciona la materia</mat-label>
     <mat-select>
-      <mat-option *ngFor="let materia of materias" [value]="materia._id">
+      <mat-option *ngFor="let materia of materias" [value]="materia._id" formControlName="Subject">
         {{materia.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <table style="width: 100%;">
+    <tr>
+      <td>
 <button type="submit" mat-flat-button color="primary">Crear Actividad</button>
+</td>
+<td>
+  <button mat-flat-button color="primary" (click)="openAsignar()">Asignar Actividad</button>
+</td>
+</tr>
+</table>
 </form>
+

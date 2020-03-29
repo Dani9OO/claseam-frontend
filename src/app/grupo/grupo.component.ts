@@ -3,10 +3,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { HorarioComponent } from '../horario/horario.component';
 import { MateriaComponent } from '../materia/materia.component';
 import { SubjectService } from '../_services/subject.service';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { GroupService } from '../_services/group.service';
+
+import {FormBuilder} from '@angular/forms';
 export interface DialogData {
   hola: string;
 }
+
 
 
 interface Periodo {
@@ -21,13 +25,23 @@ interface Periodo {
 })
 export class GrupoComponent implements OnInit {
   materias: object;
-
+  registroGrupo;
   constructor(
+    private formBuilder: FormBuilder,
+    private servicio: GroupService,
     private serve: SubjectService,
     public dialog: MatDialog,
     public dialogReff: MatDialogRef<GrupoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
-    ) { }
+    ) { 
+      this.registroGrupo = this.formBuilder.group({
+        Group: '',
+        Calendar: '',
+        Subject: '',
+        Periods: '',
+        Alumni: ''
+      });
+    }
 
 
   periodo: Periodo[] = [

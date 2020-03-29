@@ -18,7 +18,7 @@ export class ActivitiesService {
     ActualizarActividad(actividad: object) {
       return this.http.post(`${environment.api}/activities/update`, actividad);
     }
-    obtenerAlumno() {
+    obtenerActividad() {
       return this.http.get(`${environment.api}/activities/retrieve`);
     }
     materiaActividad() {
