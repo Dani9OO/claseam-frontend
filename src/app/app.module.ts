@@ -42,7 +42,7 @@ import { IniciarCuatrimestreComponent } from './iniciar-cuatrimestre/iniciar-cua
 import { MenuAlumnosComponent } from './menu-alumnos/menu-alumnos.component';
 import { SubirActividadComponent } from './subir-actividad/subir-actividad.component';
 import { AvisosComponent } from './avisos/avisos.component';
-
+import { IngresarGrupoComponent } from './ingresar-grupo/ingresar-grupo.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +60,7 @@ import { AvisosComponent } from './avisos/avisos.component';
     MenuAlumnosComponent,
     SubirActividadComponent,
     AvisosComponent,
+    IngresarGrupoComponent,
   ],
   imports: [
     HttpClientModule,
@@ -89,7 +90,7 @@ import { AvisosComponent } from './avisos/avisos.component';
   ],
   entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent,
      IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent
-    ,SubirActividadComponent, AvisosComponent],
+    ,SubirActividadComponent, IngresarGrupoComponent, AvisosComponent],
   providers: [PushNotificationService],
   bootstrap: [AppComponent]
 })

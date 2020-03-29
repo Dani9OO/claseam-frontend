@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SubirActividadComponent } from '../subir-actividad/subir-actividad.component';
-
+import { IngresarGrupoComponent } from '../ingresar-grupo/ingresar-grupo.component';
 @Component({
   selector: 'app-menu-alumnos',
   templateUrl: './menu-alumnos.component.html',
@@ -28,5 +28,14 @@ export class MenuAlumnosComponent implements OnInit {
     });
   }
 
+  openIngresar(): void {
+    this.dialogRef = this.dialog.open(IngresarGrupoComponent, {
+      width: '350px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado');
+      console.log(result);
+    });
+  }
 
 }

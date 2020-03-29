@@ -11,5 +11,8 @@ export class SubirActividadComponent implements OnInit {
 
   ngOnInit() {
   }
+  srcResult;
+  
+  
 
 }
