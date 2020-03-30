@@ -16,7 +16,11 @@ export class ActivitiesService {
       return this.http.post(`${environment.api}/activities/create`, actividad);
     }
     ActualizarActividad(actividad: object) {
-      return this.http.post(`${environment.api}/activities/update`, actividad);
+      const options = {
+        headers: this.headers,
+        body: actividad
+      };
+      return this.http.put(`${environment.api}/activities/update`, options);
     }
     obtenerActividad() {
       return this.http.get(`${environment.api}/activities/retrieve`);
@@ -25,7 +29,11 @@ export class ActivitiesService {
       return this.http.get(`${environment.api}/activities/subject`);
     }
     eliminarActividad(actividad: object) {
-      return this.http.delete(`${environment.api}/activities/delete`, actividad);
+      const options = {
+        headers: this.headers,
+        body: actividad
+      };
+      return this.http.delete(`${environment.api}/activities/delete`, options);
     }
 
 }

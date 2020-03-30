@@ -16,12 +16,20 @@ export class SubjectService {
     return this.http.post(`${environment.api}/subject/create`, materia);
   }
   actualizarMateria(materia: object) {
-    return this.http.put(`${environment.api}/subject/update`, materia);
+    const options = {
+      headers: this.headers,
+      body: materia
+    };
+    return this.http.put(`${environment.api}/subject/update`, options);
   }
   obtenerMateria() {
     return this.http.get(`${environment.api}/subject/retrieve`);
   }
   eliminarMateria(materia: object) {
-    return this.http.delete(`${environment.api}/subject/delete`, materia);
+    const options = {
+      headers: this.headers,
+      body: materia
+    };
+    return this.http.delete(`${environment.api}/subject/delete`, options);
   }
 }

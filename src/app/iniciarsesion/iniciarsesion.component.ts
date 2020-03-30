@@ -33,6 +33,8 @@ export class IniciarsesionComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  
 /*
   //falta llamar al servicio....al servicio configurar los parametros
   onSubmit(userData) {
@@ -42,7 +44,6 @@ export class IniciarsesionComponent {
       this.usuario = data;
     });
     this.checkoutForm.reset();
-  }
-*/
+  };*/
 
 }

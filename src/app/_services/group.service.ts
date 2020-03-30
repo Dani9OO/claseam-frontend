@@ -18,13 +18,25 @@ export class GroupService {
     return this.http.post(`${environment.api}/group/create`, grupo);
   }
   actualizarGrupo(grupo: object) {
-    return this.http.put(`${environment.api}/group/update`, grupo);
+    const options = {
+      headers: this.headers,
+      body: grupo
+    };
+    return this.http.put(`${environment.api}/group/update`, options);
   }
   anadirUsuarioGrupo(grupo: object) {
-    return this.http.put(`${environment.api}/group/addUser`, grupo);
+    const options = {
+      headers: this.headers,
+      body: grupo
+    };
+    return this.http.put(`${environment.api}/group/addUser`, options);
   }
   asignarActividadGrupo(grupo: object) {
-    return this.http.put(`${environment.api}/group/assignActivity`, grupo);
+    const options = {
+      headers: this.headers,
+      body: grupo
+    };
+    return this.http.put(`${environment.api}/group/assignActivity`, options);
   }
   obtenerGrupo() {
     return this.http.get(`${environment.api}/group/retrieve`);
@@ -33,6 +45,10 @@ export class GroupService {
     return this.http.get(`${environment.api}/group/retrieveOne`);
   }
   eliminarGrupo(grupo: object) {
-    return this.http.delete(`${environment.api}/group/delete`, grupo);
+    const options = {
+      headers: this.headers,
+      body: grupo
+    };
+    return this.http.delete(`${environment.api}/group/delete`, options);
   }
 }

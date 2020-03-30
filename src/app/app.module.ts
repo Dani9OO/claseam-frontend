@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, COMPILER_OPTIONS } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -48,7 +48,10 @@ import { AvisosComponent } from './avisos/avisos.component';
 import { IngresarGrupoComponent } from './ingresar-grupo/ingresar-grupo.component';
 import { AsignarActividadComponent } from './asignar-actividad/asignar-actividad.component';
 import { ConsultarAlumnosComponent } from './consultar-alumnos/consultar-alumnos.component';
-import { ConsultarCalificacionesComponent } from './consultar-calificaciones/consultar-calificaciones.component';
+import { EditarAlumnoComponent } from './editar-alumno/editar-alumno.component';
+import { ConsultarGrupoComponent } from './consultar-grupo/consultar-grupo.component';
+import { ConsultarActividadesComponent } from './consultar-actividades/consultar-actividades.component';
+import { ConsultarMateriasComponent } from './consultar-materias/consultar-materias.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,10 @@ import { ConsultarCalificacionesComponent } from './consultar-calificaciones/con
     IngresarGrupoComponent,
     AsignarActividadComponent,
     ConsultarAlumnosComponent,
-    ConsultarCalificacionesComponent
+    EditarAlumnoComponent,
+    ConsultarGrupoComponent,
+    ConsultarActividadesComponent,
+    ConsultarMateriasComponent
   ],
   imports: [
     HttpClientModule,
@@ -102,7 +108,8 @@ import { ConsultarCalificacionesComponent } from './consultar-calificaciones/con
   ],
   entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent,
      IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent
-    ,SubirActividadComponent, IngresarGrupoComponent, AsignarActividadComponent, AvisosComponent],
+    ,SubirActividadComponent, IngresarGrupoComponent, AsignarActividadComponent, AvisosComponent,
+   EditarAlumnoComponent],
   providers: [PushNotificationService],
   bootstrap: [AppComponent]
 })

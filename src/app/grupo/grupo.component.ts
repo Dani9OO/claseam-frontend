@@ -25,6 +25,7 @@ interface Periodo {
 })
 export class GrupoComponent implements OnInit {
   materias: object;
+  grupo: object;
   registroGrupo;
   constructor(
     private formBuilder: FormBuilder,
@@ -37,17 +38,15 @@ export class GrupoComponent implements OnInit {
       this.registroGrupo = this.formBuilder.group({
         Group: '',
         Calendar: '',
-        Subject: '',
-        Periods: '',
-        Alumni: ''
+        Subject: ''
       });
     }
 
 
   periodo: Periodo[] = [
-    {value: '0', viewValue: 'Enero-Abril'},
-    {value: '1', viewValue: 'Mayo-Agosto'},
-    {value: '2', viewValue: 'Septiembre-Diciembre'}
+    {value: 'Enero-Abril', viewValue: 'Enero-Abril'},
+    {value: 'Mayo-Agosto', viewValue: 'Mayo-Agosto'},
+    {value: 'Septiembre-Diciembre', viewValue: 'Septiembre-Diciembre'}
   ];
 
 
@@ -90,5 +89,14 @@ export class GrupoComponent implements OnInit {
         this.materias = data;
     });
   }
+
+  onSubmit(registerData) {
+    console.warn('datos de registro', registerData);
+    this.servicio.crearGrupo(registerData).subscribe((data: any[]) => {
+      console.log(data);
+      this.grupo = data;
+    });
+  }
+
 
 }

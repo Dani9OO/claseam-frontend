@@ -1,65 +1,49 @@
 <form class="example-form" [formGroup]="registroGrupo" (ngSubmit)="onSubmit(registroGrupo.value)">
-    <h3>Registrar Grupo</h3>
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Grupo</mat-label>
-            <input matInput formControlName="Group">
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field style="width: 100%;">
-            <mat-label>Ciclo Escolar</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let periodos of periodo" [value]="periodos.value" formControlName="Calendar">
-                {{periodos.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <mat-form-field style="width: 100%;">
-            <mat-label>Selecciona la Materia</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let materia of materias" [value]="materia._id" formControlName="Subject">
-                {{materia.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </td>
-        <td>
-          <button mat-flat-button color="primary" (click)="openHorario()">Horario</button>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <button mat-flat-button color="primary" (click)="openMateria()">Añadir Materia</button>
-        </td>
-        <td>
-          <li *ngIf="horario">
-            Tu horario: <i>{{horario}}</i>
-          </li>
-        </td>
-      </tr>
-    </table>
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>City</mat-label>
-            <input matInput placeholder="Ex. San Francisco">
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>State</mat-label>
-            <input matInput placeholder="Ex. California">
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <button mat-flat-button color="primary">Crear Grupo</button>
-  </form>
+  <h3>Registrar Grupo</h3>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Grupo</mat-label>
+          <input matInput formControlName="Group">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field style="width: 100%;">
+          <mat-label>Ciclo Escolar</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let periodos of periodo" [value]="periodos.value" formControlName="Calendar">
+              {{periodos.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field style="width: 100%;">
+          <mat-label>Selecciona la Materia</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let materia of materias" [value]="materia._id" formControlName="Subject">
+              {{materia.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <button mat-flat-button color="primary" (click)="openHorario()">Horario</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button mat-flat-button color="primary" (click)="openMateria()">Añadir Materia</button>
+      </td>
+      <td>
+        <li *ngIf="horario">
+          Tu horario: <i>{{horario}}</i>
+        </li>
+      </td>
+    </tr>
+  </table>
+  <button mat-flat-button color="primary">Crear Grupo</button>
+</form>

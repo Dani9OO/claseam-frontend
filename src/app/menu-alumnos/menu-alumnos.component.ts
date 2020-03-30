@@ -38,6 +38,15 @@ export class MenuAlumnosComponent implements OnInit {
       console.log(result);
     });
   }
-
+/*
+  openCalificaciones(): void {
+    this.dialogRef = this.dialog.open(ConsultarCalificacionesComponent, {
+      width: '425px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado');
+      console.log(result);
+    });
+  }*/
 
 }

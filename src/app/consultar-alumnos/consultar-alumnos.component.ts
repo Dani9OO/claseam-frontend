@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import {UserService} from '../_services/user.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { UserService } from '../_services/user.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EditarAlumnoComponent } from '../editar-alumno/editar-alumno.component';
 
 export interface UserData {
   _id: string;
@@ -37,6 +39,7 @@ export class ConsultarAlumnosComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(
+    public dialog: MatDialog,
     private userService: UserService
   ) {
     this.userService.obtenerAlumno().subscribe((data: any) => {
@@ -62,7 +65,15 @@ export class ConsultarAlumnosComponent implements OnInit {
 
   editarAlumno(alumno: any) {
     console.log(alumno._id);
+    this.dialogRef = this.dialog.open(EditarAlumnoComponent, {
+      width: '425px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado');
+      console.log(result);
+    });
   }
+
 
   eliminarAlumno(alumno: { _id: string; forename: string; surname: string; email: string; }) {
     console.log(alumno._id);
@@ -88,4 +99,9 @@ export class ConsultarAlumnosComponent implements OnInit {
     }
   }
 
+  dialogRef;
+
+
+
 }
+

@@ -7,6 +7,7 @@ import { IniciarCuatrimestreComponent } from '../iniciar-cuatrimestre/iniciar-cu
 import { AvisosComponent } from '../avisos/avisos.component';
 
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -59,5 +60,6 @@ export class MenuComponent {
       console.log(result);
     });
   }
+
 
 }
