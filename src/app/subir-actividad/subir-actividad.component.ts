@@ -11,8 +11,19 @@ export class SubirActividadComponent implements OnInit {
 
   ngOnInit() {
   }
-  srcResult;
-  
-  
+
+  onFileSelected() {
+    const inputNode: any = document.querySelector('#file');
+
+    if (typeof (FileReader) !== 'undefined') {
+      const reader = new FileReader();
+
+      reader.onload = (e: any) => {
+        e.target.result;
+      };
+
+      reader.readAsArrayBuffer(inputNode.files[0]);
+    }
+  }
 
 }

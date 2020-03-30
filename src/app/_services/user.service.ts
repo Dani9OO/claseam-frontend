@@ -18,11 +18,7 @@ export class UserService {
     return this.http.post(`${environment.api}/user/create`, alumno);
   }
   actualizarAlumno(alumno: object) {
-    const options = {
-      headers: this.headers,
-      body: alumno
-    };
-    return this.http.put(`${environment.api}/user/update`, options);
+    return this.http.put(`${environment.api}/user/update`, alumno);
   }
   obtenerAlumno() {
     return this.http.get(`${environment.api}/user/retrieve`);
@@ -35,18 +31,10 @@ export class UserService {
     return this.http.delete(`${environment.api}/user/delete`, options);
   }
   calificarAlumno(alumno: object) {
-    const options = {
-      headers: this.headers,
-      body: alumno
-    };
-    return this.http.put(`${environment.api}/user/gradeActivity`, options);
+    return this.http.put(`${environment.api}/user/gradeActivity`, alumno);
   }
   SubirActividadAlumno(alumno: object) {
-    const options = {
-      headers: this.headers,
-      body: alumno
-    };
-    return this.http.put(`${environment.api}/user/uploadActivity`, options);
+    return this.http.put(`${environment.api}/user/uploadActivity`, alumno);
   }
 
 }

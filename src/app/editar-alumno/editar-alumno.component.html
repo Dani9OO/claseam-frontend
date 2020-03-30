@@ -1,25 +1,26 @@
-<form>
-    <h3>Editar Alumno</h3>
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Nombre(s)</mat-label>
-            <input matInput required formControlName="forename">
-          </mat-form-field>
-      </td>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Apellido(s)</mat-label>
-            <input matInput formControlName="surname">
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <mat-icon>email</mat-icon>
-    <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      <input matInput required formControlName="email">
-    </mat-form-field>
-    <button type="submit" mat-flat-button color="primary">Modificar</button>
-  </form>
+<h3>Editar Alumno</h3>
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre(s)</mat-label>
+        <input matInput [(ngModel)]="data.forename" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido(s)</mat-label>
+        <input matInput [(ngModel)]="data.surname" required>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+<mat-icon>email</mat-icon>
+<mat-form-field class="example-full-width">
+  <mat-label>Email</mat-label>
+  <input matInput [(ngModel)]="data.email" required>
+</mat-form-field>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="onOkClick()" cdkFocusInitial>Ok</button>
+</div>

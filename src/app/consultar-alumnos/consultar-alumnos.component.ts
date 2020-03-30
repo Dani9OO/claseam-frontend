@@ -15,13 +15,6 @@ export interface UserData {
   group: string;
 }
 
-export interface Transaction {
-  _id: string;
-  forename: string;
-  surname: string;
-  email: string;
-  tipo: string;
-}
 
 @Component({
   selector: 'app-consultar-alumnos',
@@ -31,7 +24,6 @@ export interface Transaction {
 export class ConsultarAlumnosComponent implements OnInit {
 
   cambios = [];
-  cambio: Transaction;
   displayedColumns: string[] = ['nombre', 'email', 'grupo', 'acciones rápidas'];
   dataSource: MatTableDataSource<UserData>;
 
@@ -66,11 +58,21 @@ export class ConsultarAlumnosComponent implements OnInit {
   editarAlumno(alumno: any) {
     console.log(alumno._id);
     this.dialogRef = this.dialog.open(EditarAlumnoComponent, {
-      width: '425px'
+      width: '425px',
+      data: { _id: alumno._id, forename: alumno.forename, surname: alumno.surname, email: alumno.email }
     });
     this.dialogRef.afterClosed().subscribe(result => {
       console.log('Cerrado');
       console.log(result);
+      const cambio = {
+        _id: result._id,
+        forename: result.forename,
+        surname: result.surname,
+        email: result.email,
+        tipo: 'c'
+      }
+      this.cambios.push(cambio);
+      console.log(cambio);
     });
   }
 
@@ -90,7 +92,10 @@ export class ConsultarAlumnosComponent implements OnInit {
 
   aplicarCambios(alumno: any, tipo: string) {
     if (tipo === 'c') {
-      this.userService.actualizarAlumno(alumno);
+      this.userService.actualizarAlumno(alumno).subscribe((data) => {
+        console.log(data);
+      });
+      this.cambios.splice(this.cambios.findIndex(cambio => cambio.id === alumno), 1);
     } else if ( tipo === 'e') {
       this.userService.eliminarAlumno(alumno).subscribe((data) => {
         console.log(data);

@@ -16,11 +16,7 @@ export class SubjectService {
     return this.http.post(`${environment.api}/subject/create`, materia);
   }
   actualizarMateria(materia: object) {
-    const options = {
-      headers: this.headers,
-      body: materia
-    };
-    return this.http.put(`${environment.api}/subject/update`, options);
+    return this.http.put(`${environment.api}/subject/update`, materia);
   }
   obtenerMateria() {
     return this.http.get(`${environment.api}/subject/retrieve`);

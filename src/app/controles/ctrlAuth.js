@@ -16,7 +16,6 @@ router.post('/inicio', async (req, res)=>{
     if (!validPassword) {
         return res.status(401).send({auth: false, token: null});
     }
-
     //si existe usuario y contraseña es correcta se crea token
 
     const token = jwt.sign({id: user._id}, config.secret, {

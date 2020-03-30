@@ -23,9 +23,9 @@ export class ActividadComponent implements OnInit {
     private server: ActivitiesService
   ) {
     this.crearActividad = this.formBuilder.group({
-      Title: '',
-      Details: '',
-      Subject: ''
+      title: '',
+      details: '',
+      subject: ''
     });
    }
 

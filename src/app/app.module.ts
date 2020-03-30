@@ -49,9 +49,12 @@ import { IngresarGrupoComponent } from './ingresar-grupo/ingresar-grupo.componen
 import { AsignarActividadComponent } from './asignar-actividad/asignar-actividad.component';
 import { ConsultarAlumnosComponent } from './consultar-alumnos/consultar-alumnos.component';
 import { EditarAlumnoComponent } from './editar-alumno/editar-alumno.component';
-import { ConsultarGrupoComponent } from './consultar-grupo/consultar-grupo.component';
 import { ConsultarActividadesComponent } from './consultar-actividades/consultar-actividades.component';
 import { ConsultarMateriasComponent } from './consultar-materias/consultar-materias.component';
+
+import { AuthGuard } from './auth.guard';
+import { ConsultarGrupoComponent } from './consultar-grupo/consultar-grupo.component';
+import { EditarActividadComponent } from './editar-actividad/editar-actividad.component';
 
 @NgModule({
   declarations: [
@@ -73,9 +76,10 @@ import { ConsultarMateriasComponent } from './consultar-materias/consultar-mater
     AsignarActividadComponent,
     ConsultarAlumnosComponent,
     EditarAlumnoComponent,
-    ConsultarGrupoComponent,
     ConsultarActividadesComponent,
-    ConsultarMateriasComponent
+    ConsultarMateriasComponent,
+    ConsultarGrupoComponent,
+    EditarActividadComponent
   ],
   imports: [
     HttpClientModule,
@@ -107,10 +111,10 @@ import { ConsultarMateriasComponent } from './consultar-materias/consultar-mater
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent,
-     IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent
-    ,SubirActividadComponent, IngresarGrupoComponent, AsignarActividadComponent, AvisosComponent,
-   EditarAlumnoComponent],
-  providers: [PushNotificationService],
+    IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent,
+    SubirActividadComponent, IngresarGrupoComponent, AsignarActividadComponent, AvisosComponent,
+    EditarAlumnoComponent, EditarActividadComponent],
+  providers: [PushNotificationService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

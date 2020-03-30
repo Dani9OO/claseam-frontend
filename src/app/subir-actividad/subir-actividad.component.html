@@ -1,8 +1,2 @@
-<form method="post" enctype="multipart/form-data" target="_blank">
-    <p>
-      Sube un archivo:
-      <input type="file" name="archivosubido">
-    </p>
-    <button type="submit" mat-flat-button color="primary">Enviar</button>
-  </form>
-  
+<button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+<input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
