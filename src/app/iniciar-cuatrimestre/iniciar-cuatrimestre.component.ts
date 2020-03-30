@@ -3,6 +3,7 @@ import { SubjectService } from '../_services/subject.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MateriaComponent } from '../materia/materia.component';
 import {FormControl} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 interface Periodo {
   value: string;
@@ -17,9 +18,15 @@ interface Periodo {
 export class IniciarCuatrimestreComponent implements OnInit {
   materias: object;
   dialogRef;
+
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+
   constructor(
     public dialog: MatDialog,
     private serve: SubjectService,
+    private _formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
@@ -27,7 +34,16 @@ export class IniciarCuatrimestreComponent implements OnInit {
       console.log(data);
       this.materias = data;
   });
-  }
+  this.firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required]
+  });
+  this.secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required]
+  });
+  this.secondFormGroup = this._formBuilder.group({
+    thirdControl: ['', Validators.required]
+  });
+}
 
 
   openMateria(): void {

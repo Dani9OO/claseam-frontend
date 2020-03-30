@@ -1,18 +1,18 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="registroGrupo" (ngSubmit)="onSubmit(registroGrupo.value)">
     <h3>Registrar Grupo</h3>
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td>
           <mat-form-field class="example-full-width">
             <mat-label>Grupo</mat-label>
-            <input matInput>
+            <input matInput formControlName="Group">
           </mat-form-field>
         </td>
         <td>
           <mat-form-field style="width: 100%;">
             <mat-label>Ciclo Escolar</mat-label>
             <mat-select>
-              <mat-option *ngFor="let periodos of periodo" [value]="periodos.value">
+              <mat-option *ngFor="let periodos of periodo" [value]="periodos.value" formControlName="Calendar">
                 {{periodos.viewValue}}
               </mat-option>
             </mat-select>
@@ -24,7 +24,7 @@
           <mat-form-field style="width: 100%;">
             <mat-label>Selecciona la Materia</mat-label>
             <mat-select>
-              <mat-option *ngFor="let materia of materias" [value]="materia._id">
+              <mat-option *ngFor="let materia of materias" [value]="materia._id" formControlName="Subject">
                 {{materia.name}}
               </mat-option>
             </mat-select>

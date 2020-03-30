@@ -1,0 +1,61 @@
+<mat-form-field>
+  <mat-label>Buscar</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ejemplo: Kenya">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+      <td mat-cell *matCellDef="let row"> {{row.forename}} {{row.surname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Correo Electrónico </th>
+      <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="grupo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Grupo </th>
+      <td mat-cell *matCellDef="let row"> {{row.group}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones rápidas">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones Rápidas </th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)="editarAlumno({_id: row._id, forename: row.forename, surname: row.surname, email: row.email})">
+          <mat-icon>create</mat-icon>
+        </button>
+        <button mat-icon-button (click)="eliminarAlumno({_id: row._id, forename: row.forename, surname: row.surname, email: row.email})">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+  <div class="container" style="width: 100%; margin: 5% 0;">
+    <mat-card *ngFor="let cambio of cambios" style="min-width: 85%; margin: 5%">
+      <mat-card-title *ngIf="cambio.tipo==='e'" style="text-align: center;">
+        Eliminar Alumno
+      </mat-card-title>
+      <mat-card-title *ngIf="cambio.tipo==='c'" style="text-align: center;">
+        Editar Alumno
+      </mat-card-title>
+      <mat-card-content style="text-align: center;">
+        <p>{{ cambio.forename }} {{ cambio.surname }}</p>
+      </mat-card-content>
+      <mat-card-footer style="text-align: right;">
+        <button mat-icon-button (click)="aplicarCambios({_id: cambio._id, forename: cambio.forename, surname: cambio.surname, email: cambio.email}, cambio.tipo)" style="margin:0.2em">
+          <mat-icon>save</mat-icon>
+        </button>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

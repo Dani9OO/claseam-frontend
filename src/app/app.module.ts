@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatStepperModule} from '@angular/material/stepper';
 import {
   MatFormFieldModule,
   MatDialogModule,
@@ -22,7 +23,9 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatListModule,
-  MatOptionModule
+  MatOptionModule,
+  MatPaginatorModule,
+  MatSortModule
 } from '@angular/material';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
@@ -44,6 +47,8 @@ import { SubirActividadComponent } from './subir-actividad/subir-actividad.compo
 import { AvisosComponent } from './avisos/avisos.component';
 import { IngresarGrupoComponent } from './ingresar-grupo/ingresar-grupo.component';
 import { AsignarActividadComponent } from './asignar-actividad/asignar-actividad.component';
+import { ConsultarAlumnosComponent } from './consultar-alumnos/consultar-alumnos.component';
+import { ConsultarCalificacionesComponent } from './consultar-calificaciones/consultar-calificaciones.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +68,8 @@ import { AsignarActividadComponent } from './asignar-actividad/asignar-actividad
     AvisosComponent,
     IngresarGrupoComponent,
     AsignarActividadComponent,
+    ConsultarAlumnosComponent,
+    ConsultarCalificacionesComponent
   ],
   imports: [
     HttpClientModule,
@@ -73,6 +80,7 @@ import { AsignarActividadComponent } from './asignar-actividad/asignar-actividad
     MatCheckboxModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatStepperModule,
     MatDialogModule,
     MatMenuModule,
     MatSidenavModule,
@@ -88,6 +96,8 @@ import { AsignarActividadComponent } from './asignar-actividad/asignar-actividad
     MatSlideToggleModule,
     MatSelectModule,
     MatOptionModule,
+    MatPaginatorModule,
+    MatSortModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent,

@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 })
 export class UserService {
   headers = new HttpHeaders ({
-
+    'Content-Type': 'application/json',
   });
 
   constructor(
@@ -18,13 +18,17 @@ export class UserService {
     return this.http.post(`${environment.api}/user/create`, alumno);
   }
   actualizarAlumno(alumno: object) {
-    return this.http.put(`${environment.api}/user/create`, alumno);
+    return this.http.put(`${environment.api}/user/update`, alumno);
   }
   obtenerAlumno() {
     return this.http.get(`${environment.api}/user/retrieve`);
   }
   eliminarAlumno(alumno: object) {
-    return this.http.delete(`${environment.api}/user/delete`, alumno);
+    const options = {
+      headers: this.headers,
+      body: alumno
+    };
+    return this.http.delete(`${environment.api}/user/delete`, options);
   }
   calificarAlumno(alumno: object) {
     return this.http.put(`${environment.api}/user/gradeActivity`, alumno);
