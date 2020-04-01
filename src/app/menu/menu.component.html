@@ -28,6 +28,18 @@
         </a>
       </li>
       <li class="nav-item">
+        <a [routerLink]="['/']" class="nav-link" (click)="openConsultar()">
+          <mat-icon>search</mat-icon>
+          <h2 class="link-text">Consultar Alumnos</h2>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/']" class="nav-link" (click)="openConsultarA()">
+          <mat-icon>search</mat-icon>
+          <h2 class="link-text">Consultar Actividades</h2>
+        </a>
+      </li>
+      <li class="nav-item">
         <a [routerLink]="['/']" class="nav-link">
           <mat-icon>event_busy</mat-icon>
           <h2 class="link-text">Terminar Cuatrimestre</h2>

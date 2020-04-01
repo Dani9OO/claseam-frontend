@@ -5,6 +5,8 @@ import { GrupoComponent } from '../grupo/grupo.component';
 import { ActividadComponent } from '../actividad/actividad.component';
 import { IniciarCuatrimestreComponent } from '../iniciar-cuatrimestre/iniciar-cuatrimestre.component';
 import { AvisosComponent } from '../avisos/avisos.component';
+import { ConsultarAlumnosComponent } from '../consultar-alumnos/consultar-alumnos.component';
+import { ConsultarActividadesComponent } from '../consultar-actividades/consultar-actividades.component';
 
 
 
@@ -60,6 +62,28 @@ export class MenuComponent {
       console.log(result);
     });
   }
+
+
+  openConsultar(): void {
+    this.dialogRef = this.dialog.open(ConsultarAlumnosComponent, {
+      width: '900px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado');
+      console.log(result);
+    });
+  }
+
+  openConsultarA(): void {
+    this.dialogRef = this.dialog.open(ConsultarActividadesComponent, {
+      width: '900px'
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado');
+      console.log(result);
+    });
+  }
+
 
 
 }

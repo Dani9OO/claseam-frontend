@@ -1,2 +1,10 @@
-<button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-<input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+<div>
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <div>
+      <input type="file" name="file" (change)="onFileSelect($event)" />
+    </div>
+    <div>
+      <button type="submit">Upload</button>
+    </div>
+  </form>
+</div>

@@ -26,7 +26,11 @@ export class AuthenticationService {
   }
 
   isLoggedIn(){
-    return !! localStorage.getItem('token');
+    if(localStorage.getItem('token')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public get currentUserValue(): Usuario {

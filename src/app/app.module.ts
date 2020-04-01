@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import {
   MatFormFieldModule,
   MatDialogModule,
@@ -110,11 +110,27 @@ import { EditarActividadComponent } from './editar-actividad/editar-actividad.co
     MatSortModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  entryComponents: [IniciarsesionComponent, RegistroComponent, GrupoComponent,
-    IniciarCuatrimestreComponent,MateriaComponent, ActividadComponent, HorarioComponent,
-    SubirActividadComponent, IngresarGrupoComponent, AsignarActividadComponent, AvisosComponent,
-    EditarAlumnoComponent, EditarActividadComponent],
-  providers: [PushNotificationService, AuthGuard],
+  entryComponents: [
+    IniciarsesionComponent,
+    RegistroComponent,
+    GrupoComponent,
+    IniciarCuatrimestreComponent,
+    MateriaComponent,
+    ActividadComponent,
+    HorarioComponent,
+    SubirActividadComponent,
+    IngresarGrupoComponent,
+    AsignarActividadComponent,
+    AvisosComponent,
+    EditarAlumnoComponent,
+    EditarActividadComponent,
+    ConsultarAlumnosComponent,
+    ConsultarActividadesComponent
+  ],
+  providers: [
+    PushNotificationService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
